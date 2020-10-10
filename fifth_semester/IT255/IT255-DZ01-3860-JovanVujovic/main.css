@@ -1,0 +1,51 @@
+* {
+    font-family: Arial, serif;
+}
+
+header {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: blue;
+}
+
+aside {
+    width: 30%;
+    float: right;
+    font-style: italic;
+    background-color: lightgray;
+}
+
+section {
+    width: 70%;
+    float: left;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    text-align: center;
+}
