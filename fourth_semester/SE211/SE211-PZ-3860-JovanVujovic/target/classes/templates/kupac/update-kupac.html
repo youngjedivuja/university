@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div th:insert="/include/navbar"></div>
+</head>
+<body>
+<div class="container my-5">
+    <h3> Update Kupac</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-8">
+                <form action="#"
+                      th:action="@{/kupac/update/{id}(id=${kupac.kupacId})}"
+                      th:object="${kupac}" method="post">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="naziv" class="col-form-label">Naziv</label> <input
+                                type="text" th:field="*{naziv}" class="form-control" id="naziv"
+                                placeholder="Naziv"> <span
+                                th:if="${#fields.hasErrors('naziv')}" th:errors="*{naziv}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="kontaktTelefon" class="col-form-label">Kontakt telefon</label> <input
+                                type="text" th:field="*{kontaktTelefon}" class="form-control" id="kontaktTelefon"
+                                placeholder="Kontakt telefon"> <span
+                                th:if="${#fields.hasErrors('kontaktTelefon')}" th:errors="*{kontaktTelefon}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <input type="submit" class="btn btn-primary"
+                                   value="Update Kupac">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

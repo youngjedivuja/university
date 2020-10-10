@@ -1,0 +1,262 @@
+{
+  "id": "59cf3a92-5402-461c-a1cb-2cb2d7f17e75",
+  "version": "2.0",
+  "name": "SE211-Test",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "e2f6d99a-d658-4565-8518-fdca96e59d43",
+    "name": "Dodavanje proizvoda",
+    "commands": [{
+      "id": "1dbc8198-3560-4894-9242-88b2ed1b49b2",
+      "comment": "",
+      "command": "open",
+      "target": "/trgovinavujovic/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6bf4ad3a-5ebe-483a-a64a-99364444c771",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "974x1050",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e3d6d04f-0735-4476-a094-475408853ce3",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "jovan"
+    }, {
+      "id": "ef17cf73-74e3-449a-8158-6c720b6004df",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "7f7d3fd6-49f9-4711-93d2-bbe2aa994268",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "8a9ab5da-56cb-41c1-8ed2-95f973d4ae01",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Proizvodi",
+      "targets": [
+        ["linkText=Proizvodi", "linkText"],
+        ["css=.nav-item:nth-child(5) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Proizvodi')]", "xpath:link"],
+        ["xpath=//div[@id='navbarTogglerDemo03']/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/trgovinavujovic/proizvod/getAllProizvod')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Proizvodi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b2820c20-186d-454d-b537-eba34321d761",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Proizvodi",
+      "targets": [
+        ["linkText=Proizvodi", "linkText"],
+        ["css=.nav-item:nth-child(5) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Proizvodi')]", "xpath:link"],
+        ["xpath=//div[@id='navbarTogglerDemo03']/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/trgovinavujovic/proizvod/getAllProizvod')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Proizvodi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d45aaed8-c7f8-45f7-bc79-68559de90709",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.my-5 > .btn",
+      "targets": [
+        ["css=.my-5 > .btn", "css:finder"],
+        ["xpath=//a[contains(@href, '/trgovinavujovic/proizvod/create')]", "xpath:href"],
+        ["xpath=//p/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f92a0c8-e63d-47cc-9b7d-5dd5b3a72086",
+      "comment": "",
+      "command": "click",
+      "target": "css=.my-5 > .btn",
+      "targets": [
+        ["css=.my-5 > .btn", "css:finder"],
+        ["xpath=//a[contains(@href, '/trgovinavujovic/proizvod/create')]", "xpath:href"],
+        ["xpath=//p/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb526183-844c-4801-a02e-7285850922e8",
+      "comment": "",
+      "command": "click",
+      "target": "id=naziv",
+      "targets": [
+        ["id=naziv", "id"],
+        ["name=naziv", "name"],
+        ["css=#naziv", "css:finder"],
+        ["xpath=//input[@id='naziv']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b6f689c5-15e0-4cde-b403-5716d82cdd58",
+      "comment": "",
+      "command": "type",
+      "target": "id=naziv",
+      "targets": [
+        ["id=naziv", "id"],
+        ["name=naziv", "name"],
+        ["css=#naziv", "css:finder"],
+        ["xpath=//input[@id='naziv']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "nov proizvod"
+    }, {
+      "id": "537a0c11-da76-4f71-9dd3-482761e281c2",
+      "comment": "",
+      "command": "type",
+      "target": "id=cena",
+      "targets": [
+        ["id=cena", "id"],
+        ["name=cena", "name"],
+        ["css=#cena", "css:finder"],
+        ["xpath=//input[@id='cena']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "150"
+    }, {
+      "id": "52d247d5-8456-4d2e-8cfd-89398ed99c23",
+      "comment": "",
+      "command": "type",
+      "target": "id=tezina",
+      "targets": [
+        ["id=tezina", "id"],
+        ["name=tezina", "name"],
+        ["css=#tezina", "css:finder"],
+        ["xpath=//input[@id='tezina']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "150"
+    }, {
+      "id": "2c2cd4f4-2226-4cac-bcdd-3fb7b23f5d39",
+      "comment": "",
+      "command": "type",
+      "target": "id=opis",
+      "targets": [
+        ["id=opis", "id"],
+        ["name=opis", "name"],
+        ["css=#opis", "css:finder"],
+        ["xpath=//input[@id='opis']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "Kratak opis"
+    }, {
+      "id": "3df4724b-b470-4f2d-8d56-9a8ca5c15104",
+      "comment": "",
+      "command": "type",
+      "target": "id=rokTrajanja",
+      "targets": [
+        ["id=rokTrajanja", "id"],
+        ["name=rokTrajanja", "name"],
+        ["css=#rokTrajanja", "css:finder"],
+        ["xpath=//input[@id='rokTrajanja']", "xpath:attributes"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": "12/12/2020"
+    }, {
+      "id": "39adb18a-047d-493d-8266-f0dbd1bed4e3",
+      "comment": "",
+      "command": "click",
+      "target": "id=kolicinaNaStanju",
+      "targets": [
+        ["id=kolicinaNaStanju", "id"],
+        ["name=kolicinaNaStanju", "name"],
+        ["css=#kolicinaNaStanju", "css:finder"],
+        ["xpath=//input[@id='kolicinaNaStanju']", "xpath:attributes"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "01aa6746-544c-4d5b-9a4c-72681c0905bd",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0944b23c-cb08-478d-b015-ca56c1475a2a",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Add proizvod']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d44d7092-9eac-4ed6-8fac-d759de2abbf4",
+      "comment": "",
+      "command": "type",
+      "target": "id=kolicinaNaStanju",
+      "targets": [
+        ["id=kolicinaNaStanju", "id"],
+        ["name=kolicinaNaStanju", "name"],
+        ["css=#kolicinaNaStanju", "css:finder"],
+        ["xpath=//input[@id='kolicinaNaStanju']", "xpath:attributes"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": "500"
+    }, {
+      "id": "269f03a4-387b-438c-8f91-a47f8ece2396",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//input[@value='Add proizvod']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "c3f04ddd-f816-4694-a8a5-78ab5aeea190",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["e2f6d99a-d658-4565-8518-fdca96e59d43"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}

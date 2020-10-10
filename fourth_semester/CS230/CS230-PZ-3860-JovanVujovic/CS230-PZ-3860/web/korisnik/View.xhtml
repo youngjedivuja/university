@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:b="http://bootsfaces.net/ui" >
+
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewKorisnikTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <b:form>
+                <h:panelGrid columns="2">
+                    <b:label severity="info" value="#{bundle.ViewKorisnikLabel_userId}"/>
+                    <h:outputText value="#{korisnikController.selected.userId}" title="#{bundle.ViewKorisnikTitle_userId}"/>
+                    <b:label severity="info" value="#{bundle.ViewKorisnikLabel_email}"/>
+                    <h:outputText value="#{korisnikController.selected.email}" title="#{bundle.ViewKorisnikTitle_email}"/>
+                    <b:label severity="info" value="#{bundle.ViewKorisnikLabel_lozinka}"/>
+                    <h:outputText value="#{korisnikController.selected.lozinka}" title="#{bundle.ViewKorisnikTitle_lozinka}"/>
+                    <b:label severity="info" value="#{bundle.ViewKorisnikLabel_ime}"/>
+                    <h:outputText value="#{korisnikController.selected.ime}" title="#{bundle.ViewKorisnikTitle_ime}"/>
+                    <b:label severity="info" value="#{bundle.ViewKorisnikLabel_adresa}"/>
+                    <h:outputText value="#{korisnikController.selected.adresa}" title="#{bundle.ViewKorisnikTitle_adresa}"/>
+                    <b:label severity="info" value="#{bundle.ViewKorisnikLabel_grad}"/>
+                    <h:outputText value="#{korisnikController.selected.grad}" title="#{bundle.ViewKorisnikTitle_grad}"/>
+                    <b:label severity="info" value="#{bundle.ViewKorisnikLabel_drzava}"/>
+                    <h:outputText value="#{korisnikController.selected.drzava}" title="#{bundle.ViewKorisnikTitle_drzava}"/>
+                    <b:label severity="info" value="#{bundle.ViewKorisnikLabel_telefon}"/>
+                    <h:outputText value="#{korisnikController.selected.telefon}" title="#{bundle.ViewKorisnikTitle_telefon}"/>
+                    <b:label severity="info" value="#{bundle.ViewKorisnikLabel_rolaId}"/>
+                    <h:outputText value="#{korisnikController.selected.rolaId}" title="#{bundle.ViewKorisnikTitle_rolaId}"/>
+                </h:panelGrid>
+                <br />
+                <b:commandButton look="danger" action="#{korisnikController.destroyAndView}" value="#{bundle.ViewKorisnikDestroyLink}"/>
+                <br />
+                <br />
+                <b:commandButton look="primary" action="#{korisnikController.prepareCreate}" value="#{bundle.ViewKorisnikCreateLink}" />
+                <br />
+                <b:commandButton look="info" action="#{korisnikController.prepareList}" value="#{bundle.ViewKorisnikShowAllLink}"/>
+                <br />
+
+            </b:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

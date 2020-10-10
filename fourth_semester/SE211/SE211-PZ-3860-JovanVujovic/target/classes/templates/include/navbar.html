@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+          crossorigin="anonymous">
+    <title>Trgovina Vujovic</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm   navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/index}">Back to Login<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"  th:href="@{/kupac/getAllKupac}">Kupci</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/porudzbina/getAllPorudzbina}">Porudzbine</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/korisnik/getAllKorisnik}">Korisnici</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/proizvod/getAllProizvod}">Proizvodi</a>
+            </li>
+
+
+        </ul>
+        <div class="social-part">
+            <button type="button" onclick="location.href='https://www.facebook.com/jovan.c.vujovic/';"class="btn btn-fb"><i class="fab fa-facebook-f"></i></button>
+            <button type="button" onclick="location.href='https://twitter.com/java';" class="btn btn-tw"><i class="fab fa-twitter"></i></button>
+            <button type="button" onclick="location.href='https://www.instagram.com/youngjedivuja/';" class="btn btn-ins"><i class="fab fa-instagram"></i></button>
+        </div>
+    </div>
+</nav>
+</body>
+</html>

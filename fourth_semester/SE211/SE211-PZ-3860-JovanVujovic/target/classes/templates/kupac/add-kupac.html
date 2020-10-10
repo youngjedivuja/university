@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
+<head>
+    <div th:insert="/include/navbar"></div>
+    <meta charset="UTF-8">
+    <title>Trgovina Vujovic</title>
+</head>
+<body>
+<div class="container my-5">
+    <h3> Add Kupac</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-10">
+                <form action="#" th:action="@{/kupac/save}"
+                      th:object="${kupac}" method="post">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="naziv" class="col-form-label">Naziv</label> <input
+                                type="text" th:field="*{naziv}" class="form-control" id="naziv"
+                                placeholder="Naziv"> <span
+                                th:if="${#fields.hasErrors('naziv')}" th:errors="*{naziv}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="kontaktTelefon" class="col-form-label">Kontakt telefon</label> <input
+                                type="text" th:field="*{kontaktTelefon}" class="form-control" id="kontaktTelefon"
+                                placeholder="Kontakt telefon"> <span
+                                th:if="${#fields.hasErrors('kontaktTelefon')}" th:errors="*{kontaktTelefon}"
+                                class="text-danger"></span>
+                        </div>
+
+
+
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary" value="Add Kupac">
+                        </div>
+
+                        <div class="form-group col-md-8"></div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

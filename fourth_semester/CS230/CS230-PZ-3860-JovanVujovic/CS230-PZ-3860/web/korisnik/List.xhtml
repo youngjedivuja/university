@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+ xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListKorisnikTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+        <b:form styleClass="jsfcrud_list_form">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:outputText escape="false" value="#{bundle.ListKorisnikEmpty}" rendered="#{korisnikController.items.rowCount == 0}"/>
+            <h:panelGroup rendered="#{korisnikController.items.rowCount > 0}">
+                <h:outputText value="#{korisnikController.pagination.pageFirstItem + 1}..#{korisnikController.pagination.pageLastItem + 1}/#{korisnikController.pagination.itemsCount}"/>&nbsp;
+                <h:commandLink action="#{korisnikController.previous}" value="#{bundle.Previous} #{korisnikController.pagination.pageSize}" rendered="#{korisnikController.pagination.hasPreviousPage}"/>&nbsp;
+                <h:commandLink action="#{korisnikController.next}" value="#{bundle.Next} #{korisnikController.pagination.pageSize}" rendered="#{korisnikController.pagination.hasNextPage}"/>&nbsp;
+                <b:dataTable value="#{korisnikController.items}" var="item" border="0" style="border:solid 1px">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListKorisnikTitle_userId}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.userId}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListKorisnikTitle_email}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.email}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListKorisnikTitle_lozinka}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.lozinka}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListKorisnikTitle_ime}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.ime}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListKorisnikTitle_adresa}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.adresa}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListKorisnikTitle_grad}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.grad}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListKorisnikTitle_drzava}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.drzava}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListKorisnikTitle_telefon}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.telefon}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListKorisnikTitle_rolaId}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.rolaId}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="&nbsp;"/>
+                        </f:facet>
+                        <b:commandButton look="info" action="#{korisnikController.prepareView}" value="#{bundle.ListKorisnikViewLink}"/>
+                        <h:outputText value=" "/>
+                        <b:commandButton look="primary" action="#{korisnikController.prepareEdit}" value="#{bundle.ListKorisnikEditLink}"/>
+                        <h:outputText value=" "/>
+                        <b:commandButton look="danger" action="#{korisnikController.destroy}" value="#{bundle.ListKorisnikDestroyLink}"/>
+                    </h:column>
+                </b:dataTable>
+            </h:panelGroup>
+            <br />
+            <b:commandButton look="primary" action="#{korisnikController.prepareCreate}" value="#{bundle.ListKorisnikCreateLink}"/>
+            <br />
+        </b:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

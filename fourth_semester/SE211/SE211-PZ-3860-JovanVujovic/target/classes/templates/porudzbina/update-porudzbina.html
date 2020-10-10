@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div th:insert="/include/navbar"></div><link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-5">
+    <h3> Update Porudzbina</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-8">
+                <form action="#"
+                      th:action="@{/porudzbina/update/{id}(id=${porudzbina.porudzbinaId})}"
+                      th:object="${porudzbina}" method="post">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="iznos" class="col-form-label">Pun iznos</label> <input
+                                type="text" th:field="*{iznos}" class="form-control" id="iznos"
+                                placeholder="iznos"> <span
+                                th:if="${#fields.hasErrors('iznos')}" th:errors="*{iznos}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="adresaDostave" class="col-form-label">Adresa dostave</label> <input
+                                type="text" th:field="*{adresaDostave}" class="form-control" id="adresaDostave"
+                                placeholder="Adresa dostave"> <span
+                                th:if="${#fields.hasErrors('adresaDostave')}" th:errors="*{adresaDostave}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <select class="form-control" th:field="${porudzbina.kupacId}"  id="kupacId">
+                                <option th:value="${porudzbina.kupacId}"></option>
+                                <option th:each="kupac : ${kupci}" th:value="${kupac.kupacId}" th:text="${kupac.naziv}"></option>
+                            </select>
+                        </div>
+
+                        <table class="table table-striped table-responsive-md">
+                            <thead>
+                            <tr>
+                                <th>Proizvod</th>
+                                <th>Kolicina</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="detaljiporudzbine : ${porudzbina.detaljiporudzbineList}">
+                                <td th:text="${detaljiporudzbine.proizvodId.naziv}"></td>
+                                <td th:text="${detaljiporudzbine.kolicina}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="form-group col-md-8">
+                            <input type="submit" class="btn btn-primary"
+                                   value="Update porudzbina">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

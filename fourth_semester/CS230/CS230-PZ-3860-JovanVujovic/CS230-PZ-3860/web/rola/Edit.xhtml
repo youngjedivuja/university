@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditRolaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <b:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditRolaLabel_rolaId}" for="rolaId" />
+                    <b:inputText id="rolaId" value="#{rolaController.selected.rolaId}" title="#{bundle.EditRolaTitle_rolaId}" required="true" requiredMessage="#{bundle.EditRolaRequiredMessage_rolaId}"/>
+                    <h:outputLabel value="#{bundle.EditRolaLabel_nazivRole}" for="nazivRole" />
+                    <b:inputText id="nazivRole" value="#{rolaController.selected.nazivRole}" title="#{bundle.EditRolaTitle_nazivRole}" required="true" requiredMessage="#{bundle.EditRolaRequiredMessage_nazivRole}"/>
+                </h:panelGrid>
+                <b:commandButton action="#{rolaController.update}" value="#{bundle.EditRolaSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditRolaViewLink}"/>
+                <br />
+                <b:commandButton action="#{rolaController.prepareList}" value="#{bundle.EditRolaShowAllLink}" immediate="true"/>
+                <br />
+            </b:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

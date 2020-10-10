@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListKupacTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <b:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListKupacEmpty}" rendered="#{kupacController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{kupacController.items.rowCount > 0}">
+                    <h:outputText value="#{kupacController.pagination.pageFirstItem + 1}..#{kupacController.pagination.pageLastItem + 1}/#{kupacController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{kupacController.previous}" value="#{bundle.Previous} #{kupacController.pagination.pageSize}" rendered="#{kupacController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{kupacController.next}" value="#{bundle.Next} #{kupacController.pagination.pageSize}" rendered="#{kupacController.pagination.hasNextPage}"/>&nbsp;
+                    <b:dataTable value="#{kupacController.items}" var="item" border="0" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListKupacTitle_kupacId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.kupacId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListKupacTitle_naziv}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.naziv}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListKupacTitle_kontaktTelefon}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.kontaktTelefon}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <b:commandButton look="info" action="#{kupacController.prepareView}" value="#{bundle.ListKupacViewLink}"/>
+                            <h:outputText value=" "/>
+                            <b:commandButton look="primary" action="#{kupacController.prepareEdit}" value="#{bundle.ListKupacEditLink}"/>
+                            <h:outputText value=" "/>
+                            <b:commandButton look="danger" action="#{kupacController.destroy}" value="#{bundle.ListKupacDestroyLink}"/>
+                        </h:column>
+                    </b:dataTable>
+                </h:panelGroup>
+                <br />
+                <b:commandButton look="primary" action="#{kupacController.prepareCreate}" value="#{bundle.ListKupacCreateLink}"/>
+                <br />
+            </b:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

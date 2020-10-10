@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:b="http://bootsfaces.net/ui" >
+
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewPorudzbinaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <b:form>
+                <h:panelGrid columns="2">
+                    <b:label severity="info" value="#{bundle.ViewPorudzbinaLabel_porudzbinaId}"/>
+                    <h:outputText value="#{porudzbinaController.selected.porudzbinaId}" title="#{bundle.ViewPorudzbinaTitle_porudzbinaId}"/>
+                    <b:label severity="info" value="#{bundle.ViewPorudzbinaLabel_iznos}"/>
+                    <h:outputText value="#{porudzbinaController.selected.iznos}" title="#{bundle.ViewPorudzbinaTitle_iznos}"/>
+                    <b:label severity="info" value="#{bundle.ViewPorudzbinaLabel_adresaDostave}"/>
+                    <h:outputText value="#{porudzbinaController.selected.adresaDostave}" title="#{bundle.ViewPorudzbinaTitle_adresaDostave}"/>
+                    <b:label severity="info" value="#{bundle.ViewPorudzbinaLabel_datum}"/>
+                    <h:outputText value="#{porudzbinaController.selected.datum}" title="#{bundle.ViewPorudzbinaTitle_datum}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <b:label severity="info" value="#{bundle.ViewPorudzbinaLabel_status}"/>
+                    <h:outputText value="#{porudzbinaController.selected.status}" title="#{bundle.ViewPorudzbinaTitle_status}"/>
+                    <b:label severity="info" value="#{bundle.ViewPorudzbinaLabel_kupacId}"/>
+                    <h:outputText value="#{porudzbinaController.selected.kupacId}" title="#{bundle.ViewPorudzbinaTitle_kupacId}"/>
+                </h:panelGrid>
+                <br />
+                <b:commandButton look="danger" action="#{porudzbinaController.destroyAndView}" value="#{bundle.ViewPorudzbinaDestroyLink}"/>
+                <br />
+                <br />
+                <b:commandButton look="primary" action="#{porudzbinaController.prepareCreate}" value="#{bundle.ViewPorudzbinaCreateLink}" />
+                <br />
+                <b:commandButton look="info" action="#{porudzbinaController.prepareList}" value="#{bundle.ViewPorudzbinaShowAllLink}"/>
+                <br />
+
+            </b:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

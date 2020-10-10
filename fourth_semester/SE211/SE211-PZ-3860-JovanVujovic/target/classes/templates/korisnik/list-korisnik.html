@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+          crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <div th:insert="/include/navbar"></div>
+    <title>Trgovina Vujovic</title>
+</head>
+<body>
+<div class="container my-2">
+    <div class="card">
+        <div class="card-body">
+            <div th:switch="${korisniks}" class="container my-5">
+                <p class="my-5">
+                    <a th:href="@{/korisnik/signup}" class="btn btn-primary"><i
+                            class="fas fa-user-plus ml-2"> Add Korisnik</i></a>
+                </p>
+                <div class="col-md-10">
+                    <h2 th:case="null">No korisnik yet!</h2>
+                    <div th:case="*">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th class="th-sm">Name</th>
+                                <th class="th-sm">Email</th>
+                                <th class="th-sm">Phone No</th>
+                                <th class="th-sm">Edit</th>
+                                <th class="th-sm">Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="korisnik : ${korisniks}">
+                                <td th:text="${korisnik.ime}"></td>
+                                <td th:text="${korisnik.email}"></td>
+                                <td th:text="${korisnik.grad}"></td>
+                                <td><a th:href="@{/korisnik/edit/{id}(id=${korisnik.userId})}"
+                                       class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+                                <td><a
+                                        th:href="@{/korisnik/delete/{id}(id=${korisnik.userId})}"
+                                        class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListPorudzbinaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <b:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListPorudzbinaEmpty}" rendered="#{porudzbinaController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{porudzbinaController.items.rowCount > 0}">
+                    <h:outputText value="#{porudzbinaController.pagination.pageFirstItem + 1}..#{porudzbinaController.pagination.pageLastItem + 1}/#{porudzbinaController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{porudzbinaController.previous}" value="#{bundle.Previous} #{porudzbinaController.pagination.pageSize}" rendered="#{porudzbinaController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{porudzbinaController.next}" value="#{bundle.Next} #{porudzbinaController.pagination.pageSize}" rendered="#{porudzbinaController.pagination.hasNextPage}"/>&nbsp;
+                    <b:dataTable value="#{porudzbinaController.items}" var="item" border="0" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPorudzbinaTitle_porudzbinaId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.porudzbinaId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPorudzbinaTitle_iznos}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.iznos}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPorudzbinaTitle_adresaDostave}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.adresaDostave}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPorudzbinaTitle_datum}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.datum}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPorudzbinaTitle_status}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.status}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPorudzbinaTitle_kupacId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.kupacId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <b:commandButton look="info" action="#{porudzbinaController.prepareView}" value="#{bundle.ListPorudzbinaViewLink}"/>
+                            <h:outputText value=" "/>
+                            <b:commandButton look="primary" action="#{porudzbinaController.prepareEdit}" value="#{bundle.ListPorudzbinaEditLink}"/>
+                            <h:outputText value=" "/>
+                            <b:commandButton look="danger" action="#{porudzbinaController.destroy}" value="#{bundle.ListPorudzbinaDestroyLink}"/>
+                        </h:column>
+                    </b:dataTable>
+                </h:panelGroup>
+                <br />
+                <b:commandButton look="primary" action="#{porudzbinaController.prepareCreate}" value="#{bundle.ListPorudzbinaCreateLink}"/>
+                <br />
+            </b:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

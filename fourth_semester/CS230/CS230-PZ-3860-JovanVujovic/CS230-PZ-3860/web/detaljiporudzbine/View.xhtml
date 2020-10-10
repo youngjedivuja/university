@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui" >
+
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewDetaljiporudzbineTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <b:form>
+                <h:panelGrid columns="2">
+                    <b:label severity="info" value="#{bundle.ViewDetaljiporudzbineLabel_detaljiPorudzbineId}"/>
+                    <h:outputText value="#{detaljiporudzbineController.selected.detaljiPorudzbineId}" title="#{bundle.ViewDetaljiporudzbineTitle_detaljiPorudzbineId}"/>
+                    <b:label severity="info" value="#{bundle.ViewDetaljiporudzbineLabel_kolicina}"/>
+                    <h:outputText value="#{detaljiporudzbineController.selected.kolicina}" title="#{bundle.ViewDetaljiporudzbineTitle_kolicina}"/>
+                    <b:label severity="info" value="#{bundle.ViewDetaljiporudzbineLabel_porudzbinaId}"/>
+                    <h:outputText value="#{detaljiporudzbineController.selected.porudzbinaId}" title="#{bundle.ViewDetaljiporudzbineTitle_porudzbinaId}"/>
+                    <b:label severity="info" value="#{bundle.ViewDetaljiporudzbineLabel_proizvodId}"/>
+                    <h:outputText value="#{detaljiporudzbineController.selected.proizvodId}" title="#{bundle.ViewDetaljiporudzbineTitle_proizvodId}"/>
+                </h:panelGrid>
+                <br />
+                <b:commandButton look="danger" action="#{detaljiporudzbineController.destroyAndView}" value="#{bundle.ViewDetaljiporudzbineDestroyLink}"/>
+                <br />
+                <br />
+                <b:commandButton look="primary" action="#{detaljiporudzbineController.prepareCreate}" value="#{bundle.ViewDetaljiporudzbineCreateLink}" />
+                <br />
+                <b:commandButton look="info" action="#{detaljiporudzbineController.prepareList}" value="#{bundle.ViewDetaljiporudzbineShowAllLink}"/>
+                <br />
+
+            </b:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

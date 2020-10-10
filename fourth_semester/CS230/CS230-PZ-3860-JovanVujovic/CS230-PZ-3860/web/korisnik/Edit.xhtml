@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditKorisnikTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <b:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditKorisnikLabel_userId}" for="userId" />
+                    <b:inputText id="userId" value="#{korisnikController.selected.userId}" title="#{bundle.EditKorisnikTitle_userId}" required="true" requiredMessage="#{bundle.EditKorisnikRequiredMessage_userId}"/>
+                    <h:outputLabel value="#{bundle.EditKorisnikLabel_email}" for="email" />
+                    <b:inputText id="email" value="#{korisnikController.selected.email}" title="#{bundle.EditKorisnikTitle_email}" required="true" requiredMessage="#{bundle.EditKorisnikRequiredMessage_email}"/>
+                    <h:outputLabel value="#{bundle.EditKorisnikLabel_lozinka}" for="lozinka" />
+                    <b:inputText id="lozinka" value="#{korisnikController.selected.lozinka}" title="#{bundle.EditKorisnikTitle_lozinka}" required="true" requiredMessage="#{bundle.EditKorisnikRequiredMessage_lozinka}"/>
+                    <h:outputLabel value="#{bundle.EditKorisnikLabel_ime}" for="ime" />
+                    <b:inputText id="ime" value="#{korisnikController.selected.ime}" title="#{bundle.EditKorisnikTitle_ime}" required="true" requiredMessage="#{bundle.EditKorisnikRequiredMessage_ime}"/>
+                    <h:outputLabel value="#{bundle.EditKorisnikLabel_adresa}" for="adresa" />
+                    <b:inputText id="adresa" value="#{korisnikController.selected.adresa}" title="#{bundle.EditKorisnikTitle_adresa}" required="true" requiredMessage="#{bundle.EditKorisnikRequiredMessage_adresa}"/>
+                    <h:outputLabel value="#{bundle.EditKorisnikLabel_grad}" for="grad" />
+                    <b:inputText id="grad" value="#{korisnikController.selected.grad}" title="#{bundle.EditKorisnikTitle_grad}" required="true" requiredMessage="#{bundle.EditKorisnikRequiredMessage_grad}"/>
+                    <h:outputLabel value="#{bundle.EditKorisnikLabel_drzava}" for="drzava" />
+                    <b:inputText id="drzava" value="#{korisnikController.selected.drzava}" title="#{bundle.EditKorisnikTitle_drzava}" required="true" requiredMessage="#{bundle.EditKorisnikRequiredMessage_drzava}"/>
+                    <h:outputLabel value="#{bundle.EditKorisnikLabel_telefon}" for="telefon" />
+                    <b:inputText id="telefon" value="#{korisnikController.selected.telefon}" title="#{bundle.EditKorisnikTitle_telefon}" required="true" requiredMessage="#{bundle.EditKorisnikRequiredMessage_telefon}"/>
+                    <h:outputLabel value="#{bundle.EditKorisnikLabel_rolaId}" for="rolaId" />
+                    <h:selectOneMenu id="rolaId" value="#{korisnikController.selected.rolaId}" title="#{bundle.EditKorisnikTitle_rolaId}" >
+                        <f:selectItems value="#{rolaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <b:commandButton action="#{korisnikController.update}" value="#{bundle.EditKorisnikSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditKorisnikViewLink}"/>
+                <br />
+                <b:commandButton action="#{korisnikController.prepareList}" value="#{bundle.EditKorisnikShowAllLink}" immediate="true"/>
+                <br />
+            </b:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

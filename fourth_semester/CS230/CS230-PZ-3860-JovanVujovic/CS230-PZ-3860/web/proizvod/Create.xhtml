@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateProizvodTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <b:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateProizvodLabel_proizvodId}" for="proizvodId" />
+                    <b:inputText id="proizvodId" value="#{proizvodController.selected.proizvodId}" title="#{bundle.CreateProizvodTitle_proizvodId}" required="true" requiredMessage="#{bundle.CreateProizvodRequiredMessage_proizvodId}"/>
+                    <h:outputLabel value="#{bundle.CreateProizvodLabel_naziv}" for="naziv" />
+                    <b:inputText id="naziv" value="#{proizvodController.selected.naziv}" title="#{bundle.CreateProizvodTitle_naziv}" required="true" requiredMessage="#{bundle.CreateProizvodRequiredMessage_naziv}"/>
+                    <h:outputLabel value="#{bundle.CreateProizvodLabel_cena}" for="cena" />
+                    <b:inputText id="cena" value="#{proizvodController.selected.cena}" title="#{bundle.CreateProizvodTitle_cena}" required="true" requiredMessage="#{bundle.CreateProizvodRequiredMessage_cena}"/>
+                    <h:outputLabel value="#{bundle.CreateProizvodLabel_tezina}" for="tezina" />
+                    <b:inputText id="tezina" value="#{proizvodController.selected.tezina}" title="#{bundle.CreateProizvodTitle_tezina}" required="true" requiredMessage="#{bundle.CreateProizvodRequiredMessage_tezina}"/>
+                    <h:outputLabel value="#{bundle.CreateProizvodLabel_opis}" for="opis" />
+                    <b:inputText id="opis" value="#{proizvodController.selected.opis}" title="#{bundle.CreateProizvodTitle_opis}" required="true" requiredMessage="#{bundle.CreateProizvodRequiredMessage_opis}"/>
+                    <h:outputLabel value="#{bundle.CreateProizvodLabel_rokTrajanja}" for="rokTrajanja" />
+                    <b:inputText id="rokTrajanja" value="#{proizvodController.selected.rokTrajanja}" title="#{bundle.CreateProizvodTitle_rokTrajanja}" required="true" requiredMessage="#{bundle.CreateProizvodRequiredMessage_rokTrajanja}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </b:inputText>
+                    <h:outputLabel value="#{bundle.CreateProizvodLabel_kolicinaNaStanju}" for="kolicinaNaStanju" />
+                    <b:inputText id="kolicinaNaStanju" value="#{proizvodController.selected.kolicinaNaStanju}" title="#{bundle.CreateProizvodTitle_kolicinaNaStanju}" required="true" requiredMessage="#{bundle.CreateProizvodRequiredMessage_kolicinaNaStanju}"/>
+                </h:panelGrid>
+                <br />
+                <b:commandButton action="#{proizvodController.create}" value="#{bundle.CreateProizvodSaveLink}" />
+                <br />
+                <br />
+                <b:commandButton action="#{proizvodController.prepareList}" value="#{bundle.CreateProizvodShowAllLink}" immediate="true"/>
+                <br />
+            </b:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

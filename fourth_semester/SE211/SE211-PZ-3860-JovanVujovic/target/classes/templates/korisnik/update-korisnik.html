@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div th:insert="/include/navbar"></div>
+</head>
+<body>
+<div class="container my-5">
+    <h3> Update Korisnik</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-8">
+                <form action="#"
+                      th:action="@{/korisnik/update/{id}(id=${korisnik.userId})}"
+                      th:object="${korisnik}" method="post">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="email" class="col-form-label">Email</label> <input
+                                type="text" th:field="*{email}" class="form-control" id="email"
+                                placeholder="Email"> <span
+                                th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="lozinka" class="col-form-label">Lozinka</label> <input
+                                type="text" th:field="*{lozinka}" class="form-control" id="lozinka"
+                                placeholder="Lozinka"> <span
+                                th:if="${#fields.hasErrors('lozinka')}" th:errors="*{lozinka}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="name" class="col-form-label">Ime</label> <input
+                                type="text" th:field="*{ime}" class="form-control" id="name"
+                                placeholder="Ime"> <span
+                                th:if="${#fields.hasErrors('ime')}" th:errors="*{ime}"
+                                class="text-danger"></span>
+                        </div>
+
+
+                        <div class="form-group col-md-8">
+                            <label for="adresa" class="col-form-label">Adresa</label> <input
+                                type="text" th:field="*{adresa}" class="form-control"
+                                id="adresa" placeholder="Adresa"> <span
+                                th:if="${#fields.hasErrors('adresa')}" th:errors="*{adresa}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="grad" class="col-form-label">Grad</label> <input
+                                type="text" th:field="*{grad}" class="form-control"
+                                id="grad" placeholder="Grad"> <span
+                                th:if="${#fields.hasErrors('grad')}" th:errors="*{grad}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="drzava" class="col-form-label">Drzava</label> <input
+                                type="text" th:field="*{drzava}" class="form-control"
+                                id="drzava" placeholder="Drzava"> <span
+                                th:if="${#fields.hasErrors('drzava')}" th:errors="*{drzava}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="telefon" class="col-form-label">Telefon</label> <input
+                                type="text" th:field="*{telefon}" class="form-control"
+                                id="telefon" placeholder="Telefon"> <span
+                                th:if="${#fields.hasErrors('telefon')}" th:errors="*{telefon}"
+                                class="text-danger"></span>
+                        </div>
+
+
+                        <div class="form-group col-md-8">
+                            <select class="form-control" th:field="${korisnik.rolaId}"  id="userId">
+                                <option th:value="${korisnik.rolaId}"></option>
+                                <option th:each="role : ${rolaList}" th:value="${role.rolaId}" th:text="${role.nazivRole}"></option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <input type="submit" class="btn btn-primary"
+                                   value="Update korisnik">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

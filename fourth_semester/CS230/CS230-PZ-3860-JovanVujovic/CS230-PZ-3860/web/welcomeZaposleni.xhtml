@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Welcome</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/template_admin.xhtml">
+            <ui:define name="body">
+                <h1 style="text-align: center">Welcome #{login.korisnik.ime}</h1>
+                <h:form>
+        <b:jumbotron>
+            
+            <b:column col-sm="12" col-md="12">
+                    <b:thumbnail style="text-align: center">
+                            <h3>Proizvodi</h3>
+                            <b:iconAwesome value="cog" size="5x"/>
+                            <br />
+                            <p>   
+                                <br></br>
+                                <b:button look="primary" value="Predji na proizvode" href="http://localhost:8080/trgovinavujovic/faces/proizvod/List.xhtml"/>
+                            </p>
+                    </b:thumbnail>
+                </b:column>
+                
+                <b:column col-sm="12" col-md="12">
+                    <b:thumbnail style="text-align: center">
+                            <h3>Porudzbine</h3>
+                            <b:iconAwesome value="newspaper-o" size="5x"/>
+                            <br />
+                            <p>   
+                                <br></br>
+                                <b:button look="primary" value="Predji na porudzbine" href="http://localhost:8080/trgovinavujovic/faces/porudzbina/List.xhtml"/>
+                            </p>
+                    </b:thumbnail>
+                </b:column>
+        </b:jumbotron>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

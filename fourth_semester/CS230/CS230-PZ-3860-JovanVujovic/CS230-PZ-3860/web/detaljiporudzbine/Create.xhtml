@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateDetaljiporudzbineTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <b:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateDetaljiporudzbineLabel_detaljiPorudzbineId}" for="detaljiPorudzbineId" />
+                    <b:inputText id="detaljiPorudzbineId" value="#{detaljiporudzbineController.selected.detaljiPorudzbineId}" title="#{bundle.CreateDetaljiporudzbineTitle_detaljiPorudzbineId}" required="true" requiredMessage="#{bundle.CreateDetaljiporudzbineRequiredMessage_detaljiPorudzbineId}"/>
+                    <h:outputLabel value="#{bundle.CreateDetaljiporudzbineLabel_kolicina}" for="kolicina" />
+                    <b:inputText id="kolicina" value="#{detaljiporudzbineController.selected.kolicina}" title="#{bundle.CreateDetaljiporudzbineTitle_kolicina}" />
+                    <h:outputLabel value="#{bundle.CreateDetaljiporudzbineLabel_porudzbinaId}" for="porudzbinaId" />
+                    <h:selectOneMenu id="porudzbinaId" value="#{detaljiporudzbineController.selected.porudzbinaId}" title="#{bundle.CreateDetaljiporudzbineTitle_porudzbinaId}" required="true" requiredMessage="#{bundle.CreateDetaljiporudzbineRequiredMessage_porudzbinaId}">
+                        <f:selectItems value="#{porudzbinaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateDetaljiporudzbineLabel_proizvodId}" for="proizvodId" />
+                    <h:selectOneMenu id="proizvodId" value="#{detaljiporudzbineController.selected.proizvodId}" title="#{bundle.CreateDetaljiporudzbineTitle_proizvodId}" required="true" requiredMessage="#{bundle.CreateDetaljiporudzbineRequiredMessage_proizvodId}">
+                        <f:selectItems value="#{proizvodController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <b:commandButton action="#{detaljiporudzbineController.create}" value="#{bundle.CreateDetaljiporudzbineSaveLink}" />
+                <br />
+                <br />
+                <b:commandButton action="#{detaljiporudzbineController.prepareList}" value="#{bundle.CreateDetaljiporudzbineShowAllLink}" immediate="true"/>
+                <br />
+            </b:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditKupacTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <b:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditKupacLabel_kupacId}" for="kupacId" />
+                    <b:inputText id="kupacId" value="#{kupacController.selected.kupacId}" title="#{bundle.EditKupacTitle_kupacId}" required="true" requiredMessage="#{bundle.EditKupacRequiredMessage_kupacId}"/>
+                    <h:outputLabel value="#{bundle.EditKupacLabel_naziv}" for="naziv" />
+                    <b:inputText id="naziv" value="#{kupacController.selected.naziv}" title="#{bundle.EditKupacTitle_naziv}" required="true" requiredMessage="#{bundle.EditKupacRequiredMessage_naziv}"/>
+                    <h:outputLabel value="#{bundle.EditKupacLabel_kontaktTelefon}" for="kontaktTelefon" />
+                    <b:inputText id="kontaktTelefon" value="#{kupacController.selected.kontaktTelefon}" title="#{bundle.EditKupacTitle_kontaktTelefon}" />
+                </h:panelGrid>
+                <b:commandButton action="#{kupacController.update}" value="#{bundle.EditKupacSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditKupacViewLink}"/>
+                <br />
+                <b:commandButton action="#{kupacController.prepareList}" value="#{bundle.EditKupacShowAllLink}" immediate="true"/>
+                <br />
+            </b:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

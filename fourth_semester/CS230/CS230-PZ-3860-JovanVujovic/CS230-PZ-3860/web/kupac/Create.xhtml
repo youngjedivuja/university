@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateKupacTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <b:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateKupacLabel_kupacId}" for="kupacId" />
+                    <b:inputText id="kupacId" value="#{kupacController.selected.kupacId}" title="#{bundle.CreateKupacTitle_kupacId}" required="true" requiredMessage="#{bundle.CreateKupacRequiredMessage_kupacId}"/>
+                    <h:outputLabel value="#{bundle.CreateKupacLabel_naziv}" for="naziv" />
+                    <b:inputText id="naziv" value="#{kupacController.selected.naziv}" title="#{bundle.CreateKupacTitle_naziv}" required="true" requiredMessage="#{bundle.CreateKupacRequiredMessage_naziv}"/>
+                    <h:outputLabel value="#{bundle.CreateKupacLabel_kontaktTelefon}" for="kontaktTelefon" />
+                    <b:inputText id="kontaktTelefon" value="#{kupacController.selected.kontaktTelefon}" title="#{bundle.CreateKupacTitle_kontaktTelefon}" />
+                </h:panelGrid>
+                <br />
+                <b:commandButton action="#{kupacController.create}" value="#{bundle.CreateKupacSaveLink}" />
+                <br />
+                <br />
+                <b:commandButton action="#{kupacController.prepareList}" value="#{bundle.CreateKupacShowAllLink}" immediate="true"/>
+                <br />
+            </b:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
+<head>
+    <div th:insert="/include/navbar"></div>
+    <meta charset="UTF-8">
+    <title>Trgovina Vujovic</title>
+</head>
+<body>
+<div class="container my-5">
+    <h3> Add Porizovd</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-10">
+                <form action="#" th:action="@{/porudzbina/saveDP}"
+                      th:object="${detaljiporudzbine}" method="post">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="porudzbinaId" class="col-form-label">Porudzbina</label>
+                            <select class="form-control" th:field="${detaljiporudzbine.porudzbinaId}"  id="porudzbinaId">
+                                <option th:value="${porudzbina.porudzbinaId}" th:text="${porudzbina.porudzbinaId}"></option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <select class="form-control" th:field="${detaljiporudzbine.proizvodId}"  id="proizvodId">
+                                <option value="0">Select proizvod</option>
+                                <option th:each="proizvod : ${proizvodi}" th:value="${proizvod.proizvodId}" th:text="${proizvod.naziv}"></option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group col-md-8">
+                            <label for="kolicina" class="col-form-label">Kolicina</label> <input
+                                type="text" th:field="*{kolicina}" class="form-control" id="kolicina"
+                                placeholder="Kolicina"> <span
+                                th:if="${#fields.hasErrors('kolicina')}" th:errors="*{kolicina}"
+                                class="text-danger"></span>
+                        </div>
+
+
+
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary" value="Add DP">
+                        </div>
+
+                        <div class="form-group col-md-8"></div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

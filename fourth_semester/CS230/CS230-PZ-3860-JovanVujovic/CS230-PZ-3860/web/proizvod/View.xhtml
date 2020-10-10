@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:b="http://bootsfaces.net/ui" >
+
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewProizvodTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <b:form>
+                <h:panelGrid columns="2">
+                    <b:label severity="info" value="#{bundle.ViewProizvodLabel_proizvodId}"/>
+                    <h:outputText value="#{proizvodController.selected.proizvodId}" title="#{bundle.ViewProizvodTitle_proizvodId}"/>
+                    <b:label severity="info" value="#{bundle.ViewProizvodLabel_naziv}"/>
+                    <h:outputText value="#{proizvodController.selected.naziv}" title="#{bundle.ViewProizvodTitle_naziv}"/>
+                    <b:label severity="info" value="#{bundle.ViewProizvodLabel_cena}"/>
+                    <h:outputText value="#{proizvodController.selected.cena}" title="#{bundle.ViewProizvodTitle_cena}"/>
+                    <b:label severity="info" value="#{bundle.ViewProizvodLabel_tezina}"/>
+                    <h:outputText value="#{proizvodController.selected.tezina}" title="#{bundle.ViewProizvodTitle_tezina}"/>
+                    <b:label severity="info" value="#{bundle.ViewProizvodLabel_opis}"/>
+                    <h:outputText value="#{proizvodController.selected.opis}" title="#{bundle.ViewProizvodTitle_opis}"/>
+                    <b:label severity="info" value="#{bundle.ViewProizvodLabel_rokTrajanja}"/>
+                    <h:outputText value="#{proizvodController.selected.rokTrajanja}" title="#{bundle.ViewProizvodTitle_rokTrajanja}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <b:label severity="info" value="#{bundle.ViewProizvodLabel_kolicinaNaStanju}"/>
+                    <h:outputText value="#{proizvodController.selected.kolicinaNaStanju}" title="#{bundle.ViewProizvodTitle_kolicinaNaStanju}"/>
+                </h:panelGrid>
+                <br />
+                <b:commandButton look="danger" action="#{proizvodController.destroyAndView}" value="#{bundle.ViewProizvodDestroyLink}"/>
+                <br />
+                <br />
+                <b:commandButton look="primary" action="#{proizvodController.prepareCreate}" value="#{bundle.ViewProizvodCreateLink}" />
+                <br />
+                <b:commandButton look="info" action="#{proizvodController.prepareList}" value="#{bundle.ViewProizvodShowAllLink}"/>
+                <br />
+
+            </b:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

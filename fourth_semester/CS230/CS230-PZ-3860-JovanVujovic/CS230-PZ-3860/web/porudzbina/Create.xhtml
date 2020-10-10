@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePorudzbinaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <b:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreatePorudzbinaLabel_porudzbinaId}" for="porudzbinaId" />
+                    <b:inputText id="porudzbinaId" value="#{porudzbinaController.selected.porudzbinaId}" title="#{bundle.CreatePorudzbinaTitle_porudzbinaId}" required="true" requiredMessage="#{bundle.CreatePorudzbinaRequiredMessage_porudzbinaId}"/>
+                    <h:outputLabel value="#{bundle.CreatePorudzbinaLabel_iznos}" for="iznos" />
+                    <b:inputText id="iznos" value="#{porudzbinaController.selected.iznos}" title="#{bundle.CreatePorudzbinaTitle_iznos}" required="true" requiredMessage="#{bundle.CreatePorudzbinaRequiredMessage_iznos}"/>
+                    <h:outputLabel value="#{bundle.CreatePorudzbinaLabel_adresaDostave}" for="adresaDostave" />
+                    <b:inputText id="adresaDostave" value="#{porudzbinaController.selected.adresaDostave}" title="#{bundle.CreatePorudzbinaTitle_adresaDostave}" required="true" requiredMessage="#{bundle.CreatePorudzbinaRequiredMessage_adresaDostave}"/>
+                    <h:outputLabel value="#{bundle.CreatePorudzbinaLabel_datum}" for="datum" />
+                    <b:inputText id="datum" value="#{porudzbinaController.selected.datum}" title="#{bundle.CreatePorudzbinaTitle_datum}" required="true" requiredMessage="#{bundle.CreatePorudzbinaRequiredMessage_datum}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </b:inputText>
+                    <h:outputLabel value="#{bundle.CreatePorudzbinaLabel_status}" for="status" />
+                    <b:inputText id="status" value="#{porudzbinaController.selected.status}" title="#{bundle.CreatePorudzbinaTitle_status}" required="true" requiredMessage="#{bundle.CreatePorudzbinaRequiredMessage_status}"/>
+                    <h:outputLabel value="#{bundle.CreatePorudzbinaLabel_kupacId}" for="kupacId" />
+                    <h:selectOneMenu id="kupacId" value="#{porudzbinaController.selected.kupacId}" title="#{bundle.CreatePorudzbinaTitle_kupacId}" required="true" requiredMessage="#{bundle.CreatePorudzbinaRequiredMessage_kupacId}">
+                        <f:selectItems value="#{kupacController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <b:commandButton action="#{porudzbinaController.create}" value="#{bundle.CreatePorudzbinaSaveLink}" />
+                <br />
+                <br />
+                <b:commandButton action="#{porudzbinaController.prepareList}" value="#{bundle.CreatePorudzbinaShowAllLink}" immediate="true"/>
+                <br />
+            </b:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

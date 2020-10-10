@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <ui:composition template="/template_admin.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListDetaljiporudzbineTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <b:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListDetaljiporudzbineEmpty}" rendered="#{detaljiporudzbineController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{detaljiporudzbineController.items.rowCount > 0}">
+                    <h:outputText value="#{detaljiporudzbineController.pagination.pageFirstItem + 1}..#{detaljiporudzbineController.pagination.pageLastItem + 1}/#{detaljiporudzbineController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{detaljiporudzbineController.previous}" value="#{bundle.Previous} #{detaljiporudzbineController.pagination.pageSize}" rendered="#{detaljiporudzbineController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{detaljiporudzbineController.next}" value="#{bundle.Next} #{detaljiporudzbineController.pagination.pageSize}" rendered="#{detaljiporudzbineController.pagination.hasNextPage}"/>&nbsp;
+                    <b:dataTable value="#{detaljiporudzbineController.items}" var="item" border="0" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetaljiporudzbineTitle_detaljiPorudzbineId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.detaljiPorudzbineId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetaljiporudzbineTitle_kolicina}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.kolicina}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetaljiporudzbineTitle_porudzbinaId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.porudzbinaId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetaljiporudzbineTitle_proizvodId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.proizvodId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <b:commandButton look="info" action="#{detaljiporudzbineController.prepareView}" value="#{bundle.ListDetaljiporudzbineViewLink}"/>
+                            <h:outputText value=" "/>
+                            <b:commandButton look="primary" action="#{detaljiporudzbineController.prepareEdit}" value="#{bundle.ListDetaljiporudzbineEditLink}"/>
+                            <h:outputText value=" "/>
+                            <b:commandButton look="danger" action="#{detaljiporudzbineController.destroy}" value="#{bundle.ListDetaljiporudzbineDestroyLink}"/>
+                        </h:column>
+                    </b:dataTable>
+                </h:panelGroup>
+                <br />
+                <b:commandButton look="primary" action="#{detaljiporudzbineController.prepareCreate}" value="#{bundle.ListDetaljiporudzbineCreateLink}"/>
+                <br />
+            </b:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

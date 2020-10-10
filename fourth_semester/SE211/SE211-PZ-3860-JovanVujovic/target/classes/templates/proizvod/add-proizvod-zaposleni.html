@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
+<head>
+    <div th:insert="/include/navbar-zaposleni"></div>
+    <meta charset="UTF-8">
+    <title>Trgovina Vujovic</title>
+</head>
+<body>
+<div class="container my-5">
+    <h3> Add Proizvod</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-10">
+                <form action="#" th:action="@{/proizvod/saveForZaposleni}"
+                      th:object="${proizvod}" method="post">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="naziv" class="col-form-label">Naziv</label> <input
+                                type="text" th:field="*{naziv}" class="form-control" id="naziv"
+                                placeholder="Naziv"> <span
+                                th:if="${#fields.hasErrors('naziv')}" th:errors="*{naziv}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="cena" class="col-form-label">Cena</label> <input
+                                type="text" th:field="*{cena}" class="form-control" id="cena"
+                                placeholder="Cena"> <span
+                                th:if="${#fields.hasErrors('cena')}" th:errors="*{cena}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="tezina" class="col-form-label">Tezina</label> <input
+                                type="text" th:field="*{tezina}" class="form-control" id="tezina"
+                                placeholder="Tezina"> <span
+                                th:if="${#fields.hasErrors('tezina')}" th:errors="*{tezina}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="opis" class="col-form-label">Opis</label> <input
+                                type="text" th:field="*{opis}" class="form-control" id="opis"
+                                placeholder="Opis"> <span
+                                th:if="${#fields.hasErrors('opis')}" th:errors="*{opis}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="rokTrajanja" class="col-form-label">Rok trajanja</label> <input
+                                type="text" th:field="*{rokTrajanja}" class="form-control" id="rokTrajanja"
+                                placeholder="Rok trajanja"> <span
+                                th:if="${#fields.hasErrors('rokTrajanja')}" th:errors="*{rokTrajanja}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="kolicinaNaStanju" class="col-form-label">Kolicina na stanju</label> <input
+                                type="text" th:field="*{kolicinaNaStanju}" class="form-control" id="kolicinaNaStanju"
+                                placeholder="Kolicina na stanju"> <span
+                                th:if="${#fields.hasErrors('kolicinaNaStanju')}" th:errors="*{kolicinaNaStanju}"
+                                class="text-danger"></span>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary" value="Add proizvod">
+                        </div>
+
+                        <div class="form-group col-md-8"></div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
