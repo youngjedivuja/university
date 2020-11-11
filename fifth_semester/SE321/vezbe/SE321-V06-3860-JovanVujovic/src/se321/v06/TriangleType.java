@@ -1,0 +1,5 @@
+package se321.v06;
+
+public enum TriangleType {
+    RAZNOSTRANI, JEDNAKOSTRANICNI, JEDNAKOKRAKI, NEVALIDAN
+}
