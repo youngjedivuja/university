@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Test" >
+
+        <ListPreference
+            android:entries="@array/listArray"
+            android:entryValues="@array/listValues"
+            android:key="listPref"
+            android:summary="Gde se nalazi sediste Univerziteta Metropolitan?"
+            android:title="Pitanje" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="blablabla"
+        android:title="Univerzitet Info">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="info"
+            android:title="Otvori novi ekran" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
