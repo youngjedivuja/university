@@ -2,7 +2,7 @@ def main():
     exams = {}
     num_of_exams = int(input("Koliko imate polozenih ispita?: "))
 
-    for i in range(num_of_exams):
+    for _ in range(num_of_exams):
         exam = input("Unesite šifru predmeta: ")
         grade = input("Unesite ocenu: ")
         exams[exam] = grade
