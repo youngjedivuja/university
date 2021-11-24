@@ -1,0 +1,10 @@
+D:\university\seventh_semester\cs322\homeworks\hw01\CS322-DZ01-3860-JovanVujovic\bin\Debug\CS322_DZ01_3860_JovanVujovic.exe.config
+D:\university\seventh_semester\cs322\homeworks\hw01\CS322-DZ01-3860-JovanVujovic\bin\Debug\CS322_DZ01_3860_JovanVujovic.exe
+D:\university\seventh_semester\cs322\homeworks\hw01\CS322-DZ01-3860-JovanVujovic\bin\Debug\CS322_DZ01_3860_JovanVujovic.pdb
+D:\university\seventh_semester\cs322\homeworks\hw01\CS322-DZ01-3860-JovanVujovic\obj\Debug\CS322-DZ01-3860-JovanVujovic.csprojAssemblyReference.cache
+D:\university\seventh_semester\cs322\homeworks\hw01\CS322-DZ01-3860-JovanVujovic\obj\Debug\CS322_DZ01_3860_JovanVujovic.Properties.Resources.resources
+D:\university\seventh_semester\cs322\homeworks\hw01\CS322-DZ01-3860-JovanVujovic\obj\Debug\CS322-DZ01-3860-JovanVujovic.csproj.GenerateResource.cache
+D:\university\seventh_semester\cs322\homeworks\hw01\CS322-DZ01-3860-JovanVujovic\obj\Debug\CS322-DZ01-3860-JovanVujovic.csproj.CoreCompileInputs.cache
+D:\university\seventh_semester\cs322\homeworks\hw01\CS322-DZ01-3860-JovanVujovic\obj\Debug\CS322_DZ01_3860_JovanVujovic.exe
+D:\university\seventh_semester\cs322\homeworks\hw01\CS322-DZ01-3860-JovanVujovic\obj\Debug\CS322_DZ01_3860_JovanVujovic.pdb
+D:\university\seventh_semester\cs322\homeworks\hw01\CS322-DZ01-3860-JovanVujovic\obj\Debug\CS322_DZ01_3860_JovanVujovic.Form1.resources
