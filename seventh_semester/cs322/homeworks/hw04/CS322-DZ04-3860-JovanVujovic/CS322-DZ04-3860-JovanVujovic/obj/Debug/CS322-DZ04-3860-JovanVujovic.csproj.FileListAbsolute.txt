@@ -1,0 +1,6 @@
+D:\university\seventh_semester\cs322\homeworks\hw04\CS322-DZ04-3860-JovanVujovic\CS322-DZ04-3860-JovanVujovic\bin\Debug\CS322_DZ04_3860_JovanVujovic.exe
+D:\university\seventh_semester\cs322\homeworks\hw04\CS322-DZ04-3860-JovanVujovic\CS322-DZ04-3860-JovanVujovic\bin\Debug\CS322_DZ04_3860_JovanVujovic.pdb
+D:\university\seventh_semester\cs322\homeworks\hw04\CS322-DZ04-3860-JovanVujovic\CS322-DZ04-3860-JovanVujovic\obj\Debug\CS322-DZ04-3860-JovanVujovic.csprojAssemblyReference.cache
+D:\university\seventh_semester\cs322\homeworks\hw04\CS322-DZ04-3860-JovanVujovic\CS322-DZ04-3860-JovanVujovic\obj\Debug\CS322-DZ04-3860-JovanVujovic.csproj.CoreCompileInputs.cache
+D:\university\seventh_semester\cs322\homeworks\hw04\CS322-DZ04-3860-JovanVujovic\CS322-DZ04-3860-JovanVujovic\obj\Debug\CS322_DZ04_3860_JovanVujovic.exe
+D:\university\seventh_semester\cs322\homeworks\hw04\CS322-DZ04-3860-JovanVujovic\CS322-DZ04-3860-JovanVujovic\obj\Debug\CS322_DZ04_3860_JovanVujovic.pdb
