@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS322-DZ06-3860-JovanVujovic", "CS322-DZ06-3860-JovanVujovic\CS322-DZ06-3860-JovanVujovic.csproj", "{1FB237D4-C90C-41B5-9AB2-44C3463F608B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FB237D4-C90C-41B5-9AB2-44C3463F608B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FB237D4-C90C-41B5-9AB2-44C3463F608B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FB237D4-C90C-41B5-9AB2-44C3463F608B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FB237D4-C90C-41B5-9AB2-44C3463F608B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
