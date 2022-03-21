@@ -1,6 +1,8 @@
-D:\university\seventh_semester\cs322\homeworks\hw06\CS322-DZ06-3860-JovanVujovic\CS322-DZ06-3860-JovanVujovic\bin\Debug\CS322_DZ06_3860_JovanVujovic.exe
-D:\university\seventh_semester\cs322\homeworks\hw06\CS322-DZ06-3860-JovanVujovic\CS322-DZ06-3860-JovanVujovic\bin\Debug\CS322_DZ06_3860_JovanVujovic.pdb
-D:\university\seventh_semester\cs322\homeworks\hw06\CS322-DZ06-3860-JovanVujovic\CS322-DZ06-3860-JovanVujovic\obj\Debug\CS322-DZ06-3860-JovanVujovic.csprojAssemblyReference.cache
-D:\university\seventh_semester\cs322\homeworks\hw06\CS322-DZ06-3860-JovanVujovic\CS322-DZ06-3860-JovanVujovic\obj\Debug\CS322-DZ06-3860-JovanVujovic.csproj.CoreCompileInputs.cache
-D:\university\seventh_semester\cs322\homeworks\hw06\CS322-DZ06-3860-JovanVujovic\CS322-DZ06-3860-JovanVujovic\obj\Debug\CS322_DZ06_3860_JovanVujovic.exe
-D:\university\seventh_semester\cs322\homeworks\hw06\CS322-DZ06-3860-JovanVujovic\CS322-DZ06-3860-JovanVujovic\obj\Debug\CS322_DZ06_3860_JovanVujovic.pdb
+D:/university/seventh_semester/cs322/homeworks/hw06/CS322-DZ06-3860-JovanVujovic/CS322-DZ06-3860-JovanVujovic/bin/Debug/CS322_DZ06_3860_JovanVujovic.exe
+D:/university/seventh_semester/cs322/homeworks/hw06/CS322-DZ06-3860-JovanVujovic/CS322-DZ06-3860-JovanVujovic/bin/Debug/CS322_DZ06_3860_JovanVujovic.pdb
+D:/university/seventh_semester/cs322/homeworks/hw06/CS322-DZ06-3860-JovanVujovic/CS322-DZ06-3860-JovanVujovic/obj/Debug/CS322-DZ06-3860-JovanVujovic.csprojAssemblyReference.cache
+D:/university/seventh_semester/cs322/homeworks/hw06/CS322-DZ06-3860-JovanVujovic/CS322-DZ06-3860-JovanVujovic/obj/Debug/CS322-DZ06-3860-JovanVujovic.csproj.CoreCompileInputs.cache
+D:/university/seventh_semester/cs322/homeworks/hw06/CS322-DZ06-3860-JovanVujovic/CS322-DZ06-3860-JovanVujovic/obj/Debug/CS322_DZ06_3860_JovanVujovic.exe
+D:/university/seventh_semester/cs322/homeworks/hw06/CS322-DZ06-3860-JovanVujovic/CS322-DZ06-3860-JovanVujovic/obj/Debug/CS322_DZ06_3860_JovanVujovic.pdb
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw06/CS322-DZ06-3860-JovanVujovic/CS322-DZ06-3860-JovanVujovic/obj/Debug/CS322_DZ06_3860_JovanVujovic.exe
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw06/CS322-DZ06-3860-JovanVujovic/CS322-DZ06-3860-JovanVujovic/obj/Debug/CS322_DZ06_3860_JovanVujovic.pdb
