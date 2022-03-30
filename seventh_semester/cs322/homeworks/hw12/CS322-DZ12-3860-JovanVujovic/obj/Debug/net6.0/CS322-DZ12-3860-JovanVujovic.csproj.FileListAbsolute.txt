@@ -1,0 +1,15 @@
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw12/CS322-DZ12-3860-JovanVujovic/obj/Debug/net6.0/CS322-DZ12-3860-JovanVujovic.csproj.AssemblyReference.cache
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw12/CS322-DZ12-3860-JovanVujovic/obj/Debug/net6.0/CS322-DZ12-3860-JovanVujovic.GeneratedMSBuildEditorConfig.editorconfig
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw12/CS322-DZ12-3860-JovanVujovic/obj/Debug/net6.0/CS322-DZ12-3860-JovanVujovic.AssemblyInfoInputs.cache
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw12/CS322-DZ12-3860-JovanVujovic/obj/Debug/net6.0/CS322-DZ12-3860-JovanVujovic.AssemblyInfo.cs
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw12/CS322-DZ12-3860-JovanVujovic/obj/Debug/net6.0/CS322-DZ12-3860-JovanVujovic.csproj.CoreCompileInputs.cache
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw12/CS322-DZ12-3860-JovanVujovic/bin/Debug/net6.0/CS322-DZ12-3860-JovanVujovic
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw12/CS322-DZ12-3860-JovanVujovic/bin/Debug/net6.0/CS322-DZ12-3860-JovanVujovic.deps.json
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw12/CS322-DZ12-3860-JovanVujovic/bin/Debug/net6.0/CS322-DZ12-3860-JovanVujovic.runtimeconfig.json
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw12/CS322-DZ12-3860-JovanVujovic/bin/Debug/net6.0/CS322-DZ12-3860-JovanVujovic.dll
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw12/CS322-DZ12-3860-JovanVujovic/bin/Debug/net6.0/CS322-DZ12-3860-JovanVujovic.pdb
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw12/CS322-DZ12-3860-JovanVujovic/obj/Debug/net6.0/CS322-DZ12-3860-JovanVujovic.dll
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw12/CS322-DZ12-3860-JovanVujovic/obj/Debug/net6.0/refint/CS322-DZ12-3860-JovanVujovic.dll
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw12/CS322-DZ12-3860-JovanVujovic/obj/Debug/net6.0/CS322-DZ12-3860-JovanVujovic.pdb
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw12/CS322-DZ12-3860-JovanVujovic/obj/Debug/net6.0/CS322-DZ12-3860-JovanVujovic.genruntimeconfig.cache
+/home/vuja/dev/university/seventh_semester/cs322/homeworks/hw12/CS322-DZ12-3860-JovanVujovic/obj/Debug/net6.0/ref/CS322-DZ12-3860-JovanVujovic.dll
