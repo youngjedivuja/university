@@ -9,16 +9,16 @@ public class Person {
     private int Id { get; set; }
 
     [Column("name")] 
-    private string Name;
+    private string Name { get; set; }
     [Column("surname")]
-    private string Surname;
+    private string Surname { get; set; }
     [Column("unid")] 
-    private string Unid;
+    private string Unid { get; set; }
     [Column("pin")] 
-    private string Pin;
+    private string Pin { get; set; }
     [Column("birth_date")]
-    private string BirthDate;
+    private DateTime BirthDate { get; set; }
     [Column("gender")]
-    private string Gender;
+    private string Gender { get; set; }
 
 }
