@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "7bZcIiOPu6nz4IT+dGPMqT4bLnrdJWRfo8fHs1GtV30=",
+  "Source": "istv-backend",
+  "BasePath": "_content/istv-backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
