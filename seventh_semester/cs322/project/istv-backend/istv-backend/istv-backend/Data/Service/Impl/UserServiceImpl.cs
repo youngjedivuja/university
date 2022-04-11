@@ -39,4 +39,16 @@ public class UserServiceImpl : UserService {
         _context.SaveChanges();
         return entry.Entity;
     }
+
+    public User Update(User user) {
+        User? existingUser = _context.Users.Find(user.Id);
+        if (existingUser == null) {
+            throw new ArgumentException("User ne sme biti null");
+        }
+
+        EntityEntry<User> entry = _context.Entry(existingUser);
+        entry.CurrentValues.SetValues(user);
+        _context.SaveChanges();
+        return entry.Entity;
+    }
 }

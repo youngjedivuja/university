@@ -9,4 +9,5 @@ public interface UserService {
     List<User> GetAll();
     List<Role> GetUserRole(User user);
     User Save(User user);
+    User Update(User user);
 }

@@ -29,9 +29,9 @@ public class EmployeeController : ControllerBase {
         return Ok(_employeeService.UpdateRecordStatus(id));
     }
 
-    [HttpPut]
-    public IActionResult Update([FromBody] Employee employee) {
-        return Ok(_employeeService.Update(employee));
+    [HttpPut, Route("updateEmployeeDTO")]
+    public IActionResult Update([FromBody] UserPersonEmployeeDTO userPersonEmployeeDTO) {
+        return Ok(_employeeService.UpdateUserPersonEmployeeDTO(userPersonEmployeeDTO));
     }
 
     [HttpPost, Route("saveEmployeeDTO")]

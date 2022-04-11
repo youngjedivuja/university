@@ -10,4 +10,6 @@ public interface EmployeeService {
     Employee Save(Employee employee);
     Employee Update(Employee employee);
     Employee SaveUserPersonEmployeeDTO(UserPersonEmployeeDTO userPersonEmployeeDto);
+    Employee UpdateUserPersonEmployeeDTO(UserPersonEmployeeDTO userPersonEmployeeDto);
+    Employee GetByUserId(int userId);
 }

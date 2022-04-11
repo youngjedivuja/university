@@ -73,6 +73,36 @@ public class EmployeeServiceImpl : EmployeeService {
         return entry.Entity;
     }
 
+    public Employee UpdateUserPersonEmployeeDTO(UserPersonEmployeeDTO userPersonEmployeeDto) {
+        Person person = _personService.GetByPin(userPersonEmployeeDto.pin);
+        person.BirthDate = userPersonEmployeeDto.birthDate;
+        person.Gender = userPersonEmployeeDto.gender;
+        person.Name = userPersonEmployeeDto.name;
+        person.Surname = userPersonEmployeeDto.surname;
+        person.Pin = userPersonEmployeeDto.pin;
+        person = _personService.Update(person);
+
+        User user = _userService.GetByUsername(userPersonEmployeeDto.username);
+        user.PersonId = person;
+        user.PersonFk = person.Id;
+        user.Email = userPersonEmployeeDto.email;
+        user.Password = BCrypt.Net.BCrypt.HashPassword(user.Username + "123");
+        user = _userService.Update(user);
+
+        Employee employee = GetByUserId(user.Id);
+        employee.UserFk = user.Id;
+        employee.UserId = user;
+        employee.Bank = userPersonEmployeeDto.bank;
+        employee.Position = userPersonEmployeeDto.position;
+        employee.EmploymentStartDate = userPersonEmployeeDto.employmentStartDate;
+
+        return Update(employee);
+    }
+
+    public Employee GetByUserId(int userId) {
+        return _context.Employees.Single(e => e.UserFk == userId);
+    }
+
     public Employee Save(Employee employee) {
         EntityEntry<Employee> entry = _context.Employees.Add(employee);
         _context.SaveChanges();

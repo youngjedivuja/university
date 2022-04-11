@@ -16,4 +16,21 @@ public class PersonServiceImpl : PersonService {
         _context.SaveChanges();
         return entry.Entity;
     }
+
+    public Person GetByPin(string pin) {
+        return _context.Persons.Single(p => p.Pin == pin);
+
+    }
+
+    public Person Update(Person person) {
+        Person? existingPerson = _context.Persons.Find(person.Id);
+        if (existingPerson == null) {
+            throw new ArgumentException("Person ne sme biti null");
+        }
+
+        EntityEntry<Person> entry = _context.Entry(existingPerson);
+        entry.CurrentValues.SetValues(person);
+        _context.SaveChanges();
+        return entry.Entity;
+    }
 }
