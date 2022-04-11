@@ -1,5 +1,4 @@
 using istv_backend.Data.dto;
-using istv_backend.Data.Entity;
 using istv_backend.Data.Service;
 using Microsoft.AspNetCore.Mvc;
 

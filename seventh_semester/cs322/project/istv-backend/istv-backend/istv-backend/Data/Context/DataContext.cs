@@ -11,6 +11,7 @@ public class DataContext : DbContext {
     public DbSet<Buyer> Buyers { get; set; }
     public DbSet<Employee> Employees { get; set; }
     public DbSet<Person> Persons { get; set; }
+    public DbSet<Product> Products { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
