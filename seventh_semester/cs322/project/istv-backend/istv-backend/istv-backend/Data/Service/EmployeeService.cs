@@ -1,5 +1,13 @@
+using istv_backend.Data.dto;
+using istv_backend.Data.Entity;
+
 namespace istv_backend.Data.Service; 
 
-public class EmployeeService {
-    
+public interface EmployeeService {
+    List<Employee> GetAll();
+    Employee GetById(int id);
+    Employee UpdateRecordStatus(int id);
+    Employee Save(Employee employee);
+    Employee Update(Employee employee);
+    Employee SaveUserPersonEmployeeDTO(UserPersonEmployeeDTO userPersonEmployeeDto);
 }

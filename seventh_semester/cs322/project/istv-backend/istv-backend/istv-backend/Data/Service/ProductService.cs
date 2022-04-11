@@ -1,5 +1,5 @@
 namespace istv_backend.Data.Service; 
 
-public class ProductService {
+public interface ProductService {
     
 }

@@ -8,4 +8,5 @@ public interface UserService {
     User GetById(int id);
     List<User> GetAll();
     List<Role> GetUserRole(User user);
+    User Save(User user);
 }

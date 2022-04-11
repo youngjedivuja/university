@@ -35,7 +35,7 @@ public class AuthController : ControllerBase {
         var roles = _userService.GetUserRole(user);
         var roleStrings = new List<string>();
         foreach (var role in roles) {
-            roleStrings.Add(role.Name);
+            roleStrings.Add("ROLE_" + role.Name);
         }
 
         var jwtResult = _jwtAuthManager.GenerateTokens(user, roleStrings);

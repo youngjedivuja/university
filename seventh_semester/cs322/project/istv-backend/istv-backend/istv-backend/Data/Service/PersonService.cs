@@ -1,5 +1,7 @@
+using istv_backend.Data.Entity;
+
 namespace istv_backend.Data.Service; 
 
-public class PersonService {
-    
+public interface PersonService {
+    Person Save(Person person);
 }

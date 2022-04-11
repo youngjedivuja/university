@@ -18,6 +18,9 @@ builder.Services.AddDbContext<DataContext>(opt => {
 });
 builder.Services.AddScoped<UserService, UserServiceImpl>();
 builder.Services.AddScoped<UserRoleService, UserRoleServiceImpl>();
+builder.Services.AddScoped<BuyerService, BuyerServiceImpl>();
+builder.Services.AddScoped<EmployeeService, EmployeeServiceImpl>();
+builder.Services.AddScoped<PersonService, PersonServiceImpl>();
 builder.Services.AddControllers();
 // here we add MVC but disable model validation
 builder.Services.AddMvc(options => options.ModelValidatorProviders.Clear());
@@ -76,5 +79,4 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseCors();
 app.MapControllers();
-
 app.Run();

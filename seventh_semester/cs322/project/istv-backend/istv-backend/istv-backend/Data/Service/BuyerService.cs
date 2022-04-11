@@ -1,5 +1,7 @@
+using istv_backend.Data.Entity;
+
 namespace istv_backend.Data.Service; 
 
-public class BuyerService {
-    
+public interface BuyerService {
+    List<Buyer> GetAll();
 }

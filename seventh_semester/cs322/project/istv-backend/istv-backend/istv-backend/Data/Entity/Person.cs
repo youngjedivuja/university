@@ -4,21 +4,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace istv_backend.Data.Entity; 
 
 [Table("person")]
-public class Person {
+public class Person : Auditable{
     [Key, Column("person_id")]
-    private int Id { get; set; }
+    public int Id { get; set; }
 
     [Column("name")] 
-    private string Name { get; set; }
+    public string Name { get; set; }
     [Column("surname")]
-    private string Surname { get; set; }
+    public string Surname { get; set; }
     [Column("unid")] 
-    private string Unid { get; set; }
+    public string Unid { get; set; }
     [Column("pin")] 
-    private string Pin { get; set; }
+    public string Pin { get; set; }
     [Column("birth_date")]
-    private DateTime BirthDate { get; set; }
+    public DateTime BirthDate { get; set; }
     [Column("gender")]
-    private string Gender { get; set; }
+    public string Gender { get; set; }
 
 }

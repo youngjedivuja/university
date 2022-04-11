@@ -18,4 +18,10 @@ public class User : Auditable {
     [Column("email")]
     public string Email { get; set; }
     
+    [Column("person_id")]
+    [ForeignKey("PersonId")]
+    public int PersonFk { get; set; }
+
+    [ForeignKey("PersonFk")] public virtual Person PersonId { get; set; }
+    
 }

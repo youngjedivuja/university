@@ -1,5 +1,6 @@
 using istv_backend.Data.Context;
 using istv_backend.Data.Entity;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace istv_backend.Data.Service.Impl;
 
@@ -18,8 +19,6 @@ public class UserServiceImpl : UserService {
     }
 
     public bool IsPasswordValid(string plain, string hashed) {
-        Console.WriteLine(BCrypt.Net.BCrypt.HashPassword(plain));
-        Console.WriteLine(BCrypt.Net.BCrypt.Verify(plain, hashed));
         return BCrypt.Net.BCrypt.Verify(plain, hashed);
     }
 
@@ -33,5 +32,11 @@ public class UserServiceImpl : UserService {
 
     public List<Role> GetUserRole(User user) {
         return _userRoleService.GetUserRoles(user);
+    }
+
+    public User Save(User user) {
+        EntityEntry<User> entry = _context.Users.Add(user);
+        _context.SaveChanges();
+        return entry.Entity;
     }
 }
