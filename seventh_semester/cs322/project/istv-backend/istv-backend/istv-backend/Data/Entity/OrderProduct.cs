@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace istv_backend.Data.Entity;
 
 [Table("order_product")]
-public class OrderProduct {
-    [Key, Column("order_product_id")] private int Id { get; set; }
+public class OrderProduct : Auditable {
+    [Key, Column("order_product_id")] public int Id { get; set; }
     [Column("product_id")]
     [ForeignKey("Product")]
     public int ProductId { get; set; }
@@ -18,5 +18,5 @@ public class OrderProduct {
 
     [ForeignKey("OrderId")] public virtual Order Order { get; set; }
 
-    [Column("quantity")] private int quantity { get; set; }
+    [Column("quantity")] public int Quantity { get; set; }
 }

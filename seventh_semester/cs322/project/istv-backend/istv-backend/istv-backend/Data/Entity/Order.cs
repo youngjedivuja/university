@@ -16,5 +16,5 @@ public class Order {
     [Column("delivery_address")] 
     public string DeliveryAddress { get; set; }
     [Column("order_status")]
-    private string OrderStatus { get; set; }
+    public string OrderStatus { get; set; }
 }

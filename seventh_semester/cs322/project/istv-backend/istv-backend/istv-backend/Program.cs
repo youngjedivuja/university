@@ -22,6 +22,8 @@ builder.Services.AddScoped<BuyerService, BuyerServiceImpl>();
 builder.Services.AddScoped<EmployeeService, EmployeeServiceImpl>();
 builder.Services.AddScoped<PersonService, PersonServiceImpl>();
 builder.Services.AddScoped<ProductService, ProductServiceImpl>();
+builder.Services.AddScoped<OrderService, OrderServiceImpl>();
+builder.Services.AddScoped<OrderProductService, OrderProductServiceImpl>();
 builder.Services.AddControllers();
 // here we add MVC but disable model validation
 builder.Services.AddMvc(options => options.ModelValidatorProviders.Clear());

@@ -11,6 +11,6 @@ public class Buyer {
     public int UserId { get; set; }
 
     [ForeignKey("UserId")] public virtual User User { get; set; }
-    [Column("company_name")] private string CompanyName { get; set; }
-    [Column("City")] private string City { get; set; }
+    [Column("company_name")] public string CompanyName { get; set; }
+    [Column("City")] public string City { get; set; }
 }
