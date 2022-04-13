@@ -4,4 +4,5 @@ namespace istv_backend.Data.Service;
 
 public interface OrderProductService {
     List<OrderProduct> GetAllByOrderId(int id);
+    OrderProduct Save(OrderProduct orderProduct);
 }

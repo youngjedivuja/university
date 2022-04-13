@@ -1,15 +1,23 @@
+using System.Security.Claims;
+using istv_backend.Data.dto;
+using istv_backend.Data.Entity;
 using istv_backend.Data.Service;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace istv_backend.Controller; 
+namespace istv_backend.Controller;
 
 [ApiController]
 [Route("orders")]
-public class OrderController : ControllerBase{
+public class OrderController : ControllerBase {
     private readonly OrderService _orderService;
 
     public OrderController(OrderService orderService) {
         _orderService = orderService;
+    }
+    protected int GetUserId()
+    {
+        return int.Parse(this.User.Claims.First(i => i.Type == "UserId").Value);
     }
 
     [HttpGet]
@@ -33,7 +41,17 @@ public class OrderController : ControllerBase{
     }
 
     [HttpGet("{orderId}/toggleOrderStatus/{status}")]
-    public IActionResult toggleOrderStatus(int orderId, string status) {
+    public IActionResult ToggleOrderStatus(int orderId, string status) {
         return Ok(_orderService.toggleOrderStatus(orderId, status));
+    }
+
+    [HttpGet("forBuyer/{username}")]
+    public IActionResult GetAllByUsername(string username) {
+        return Ok(_orderService.GetAllByUsername(username));
+    }
+
+    [HttpPost("saveOrderDTO/{username}")]
+    public IActionResult SaveOrderDTO(string username, [FromBody] OrderDTO orderDto) {
+        return Ok(_orderService.SaveOrderDTO(username, orderDto));
     }
 }
